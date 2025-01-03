@@ -1,0 +1,14 @@
+routes:
+  -
+    id: example-round-robin
+    uri: /hello
+    upstream:
+      nodes:
+        - host: web1
+          port: 80
+          weight: 1
+        - host: web2
+          port: 80
+          weight: 1
+      type: roundrobin
+#END
