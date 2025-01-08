@@ -1,10 +1,10 @@
 <script src="./htmx.min.js"></script>
 
-<div hx-get="http://rustrest/hello"  hx-swap="afterend">
+<div hx-get="http://rustrest/api"  hx-swap="afterend">
     Control Click me
 </div>
 
-<div hx-get="/hello" hx-swap="innerHTML swap:1s">Get Some HTML & Append It</div>
+<div hx-get="/api" hx-swap="innerHTML swap:1s">Get Some HTML & Append It</div>
 
 
 <div hx-get="https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js" hx-swap="innerHTML swap:1s">Get Some HTML & Append It</div>
