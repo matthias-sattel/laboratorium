@@ -1,0 +1,47 @@
+services:
+  apisix: 
+    image: apache/apisix:${APISIX_IMAGE_TAG:-3.11.0-debian}
+    restart: always
+    environment:
+      - CLIENT_ID=${CLIENT_ID:-default_value}
+      - CLIENT_SECRET=${CLIENT_SECRET:-default_value}
+    volumes:
+      - ./apisix_conf/config.yaml:/usr/local/apisix/conf/config.yaml:ro
+      - ./apisix_conf/apisix.yaml:/usr/local/apisix/conf/apisix.yaml:ro
+    ports:
+      - "9180:9180/tcp"
+      - "9080:9080/tcp"
+      - "9091:9091/tcp"
+      - "9443:9443/tcp"
+      - "9092:9092/tcp"
+    networks:
+      apisix:
+    
+  web1:
+    image: nginx:1.27.3
+    restart: always
+    volumes:
+      - ./upstream/web1.conf:/etc/nginx/nginx.conf
+    ports:
+      - "9081:80/tcp"
+    environment:
+      - NGINX_PORT=80
+    networks:
+      apisix:
+
+  web2:
+    image: nginx:1.27.3
+    restart: always
+    volumes:
+      - ./upstream/web2.conf:/etc/nginx/nginx.conf
+    ports:
+      - "9082:80/tcp"
+    environment:
+      - NGINX_PORT=80
+    networks:
+      apisix:
+
+networks:
+  apisix:
+    driver: bridge
+      
