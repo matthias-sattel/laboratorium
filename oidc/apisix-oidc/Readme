@@ -1,6 +1,4 @@
-# Round robin we go
-
-My first experiment is simply to route requests for the same URI to different nodes. It is straightforward to get round robin routing, as shown in the [APISIX Config](apisix_conf/apisix.yaml).
+# Authenticate user before he can access your API
 
 To simulate the scenario, nginx nodes run in two separate container. The third node is the APISIX Gateway. To start up the simulation, simply run
 ```

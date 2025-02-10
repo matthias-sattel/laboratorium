@@ -19,5 +19,5 @@ routes:
         redirect_uri: http://localhost:9080/callback
         scope: openid profile email
         session:
-          secret: PhmT#TN27tZu7uarTYYY
+          secret: ${{SESSION_SECRET}}
 #END

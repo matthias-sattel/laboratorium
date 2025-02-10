@@ -5,6 +5,7 @@ services:
     environment:
       - CLIENT_ID=${CLIENT_ID:-default_value}
       - CLIENT_SECRET=${CLIENT_SECRET:-default_value}
+      - SESSION_SECRET=${SESSION_SECRET:-default_value}
     volumes:
       - ./apisix_conf/config.yaml:/usr/local/apisix/conf/config.yaml:ro
       - ./apisix_conf/apisix.yaml:/usr/local/apisix/conf/apisix.yaml:ro
