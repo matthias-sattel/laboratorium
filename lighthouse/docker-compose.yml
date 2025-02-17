@@ -4,7 +4,7 @@ services:
     ports:
       - '9001:9001'
     volumes:
-      - lhci-data:/data
+      - ./lhci-data:/data
     networks:
       - lighthouse-network
   webapp:
@@ -18,7 +18,5 @@ services:
       - NGINX_PORT=80
     networks:
       lighthouse-network:
-volumes:
-  lhci-data:
 networks:
   lighthouse-network:

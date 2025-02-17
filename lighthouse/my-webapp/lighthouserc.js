@@ -41,7 +41,7 @@ module.exports = {
       upload: {
         target: 'lhci',
         serverBaseUrl: 'http://localhost:9001',
-        token: '2bebe269-2ef8-406a-9a16-a01c4fae0e51'
+        token: '4cb2e697-bebe-43a9-a1e5-7c9123edc6ec'
       },
     },
   }
