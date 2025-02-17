@@ -1,0 +1,15 @@
+# Round robin we go
+
+My first experiment is simply to route requests for the same URI to different nodes. It is straightforward to get round robin routing, as shown in the [APISIX Config](apisix_conf/apisix.yaml).
+
+To simulate the scenario, nginx nodes run in two separate container. The third node is the APISIX Gateway. To start up the simulation, simply run
+```
+docker compose up
+```
+Requests to the same URI will then be routet round robin to one of the two nginx container.
+```
+➜  ~ curl http://localhost:9080/hello
+Hello World from Web 1                                                                 ➜  ~ curl http://localhost:9080/hello
+Hello World from Web 2                                                                 ➜  ~ curl http://localhost:9080/hello
+Hello World from Web 1    
+```
