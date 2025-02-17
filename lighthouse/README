@@ -1,0 +1,4 @@
+# Lighthouse CI
+
+## Goal
+In this project we want to setup a small SPA and integrate lighthouse into our build to get fast feedback during development.
