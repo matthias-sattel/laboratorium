@@ -1,0 +1,23 @@
+routes:
+  -
+    id: example-round-robin
+    uri: /*
+    upstream:
+      nodes:
+        - host: web1
+          port: 80
+          weight: 1
+        - host: web2
+          port: 80
+          weight: 1
+      type: roundrobin
+    plugins:
+      openid-connect:
+        client_id: ${{CLIENT_ID}}
+        client_secret: ${{CLIENT_SECRET}}
+        discovery: https://accounts.google.com/.well-known/openid-configuration
+        redirect_uri: http://localhost:9080/callback
+        scope: openid profile email
+        session:
+          secret: ${{SESSION_SECRET}}
+#END

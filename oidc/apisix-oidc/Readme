@@ -1,0 +1,13 @@
+# Authenticate user before he can access your API
+
+To simulate the scenario, nginx nodes run in two separate container. The third node is the APISIX Gateway. To start up the simulation, simply run
+```
+docker compose up
+```
+Requests to the same URI will then be routet round robin to one of the two nginx container.
+```
+➜  ~ curl http://localhost:9080/hello
+Hello World from Web 1                                                                 ➜  ~ curl http://localhost:9080/hello
+Hello World from Web 2                                                                 ➜  ~ curl http://localhost:9080/hello
+Hello World from Web 1    
+```

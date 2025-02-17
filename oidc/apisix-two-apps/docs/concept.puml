@@ -1,0 +1,25 @@
+@startuml
+
+skinparam Shadowing false
+
+actor Alice as alice
+
+node hello {
+    agent "Hello Webapp" as helloapp
+    component HelloService as helloservice
+}
+
+node employee {
+    agent "Employee Webapp" as employeeapp
+    node EmployeeService as employeeservice
+}
+
+node "OpenID Provider" as oidp
+
+alice - helloapp
+alice - employeeapp
+helloapp - helloservice
+employeeapp - employeeservice
+helloservice - oidp
+employeeservice - oidp
+@enduml

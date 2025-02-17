@@ -1,0 +1,13 @@
+@startuml
+
+skinparam Shadowing false
+
+Alice -> HelloService: get /hello application/html
+HelloService -> HelloService: checkAuthentication
+HelloService --> Alice: 302 redirect to OIDC Provider
+Alice -> OpenIDProvider: get login page
+OpenIDProvider --> Alice: 200 login page
+Alice -> OpenIDProvider: authenticate
+OpenIDProvider --> Alice: 200 redirect https://<HelloService>/<redirect_uri>
+Alice --> HelloService: get <redirect_uri> code
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+
+skinparam Shadowing false
+
+actor Alice as alice
+participant "Hello Webservice" as HelloService
+participant "OpenID Provider" as openidprovider
+
+alice -> HelloService: get /hello application/html
+HelloService -> HelloService: checkAuthentication
+HelloService --> alice: 302 redirect to OIDC Provider
+alice -> openidprovider: get login page
+openidprovider --> alice: 200 login page
+alice -> openidprovider: authenticate
+openidprovider --> alice: 200 redirect https://<helloservice>/<redirect_uri>
+alice --> HelloService: get <redirect_uri> code
+@enduml
