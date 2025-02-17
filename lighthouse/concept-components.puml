@@ -1,0 +1,17 @@
+@startuml
+
+
+component "Dev Tools" as devtools
+node "nginx Container" {
+    component "Webapp" as app
+}
+
+node "Lighthouse Container" {
+    component "Lighthouse CI" as ci
+}
+
+devtools -> app : update code
+devtools -> ci : trigger analysis
+ci -> app : analyse Webapp
+
+@enduml
