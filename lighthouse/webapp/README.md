@@ -1,6 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This webapp project is used to test lighthouse integration
 
 ## Getting Started
+
+As this is a standard next.js application, all usual commands can be applied to it in order to build, run, test the webapp.
+
+In addition we integrate lighthouse, so that we can audit the webapp concerning performance, seo, best practices and accessibility.
+
+This project is used as a playground and not as a reference :-)
+
+# Options for integration with lighthouse
+
+(A) Interation into development with local lhci
+(B) Integration into local deployment with local lhci
+(C) Integration into github pipelin
+
+## (A) Integration into development with local lhci
+
+## (B) Integration into local deployment with local lhci
 
 First, run the development server:
 
@@ -15,22 +31,3 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
