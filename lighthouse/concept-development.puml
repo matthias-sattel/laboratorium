@@ -1,16 +1,16 @@
 @startuml
 actor "Developer" as dev
-participant "Developer Environment" as devtools
+participant "Development Environment" as devtools
 participant "Webapp" as app
-participant "Lighthouse CI" as lh
+participant "Lighthouse CI" as lhci
 
 dev -> devtools : update code
 group build
     devtools -> app : reload
-    devtools -> lh : analyze webapp
+    devtools -> lhci : analyze webapp
 end
 
-lh --> dev : results from webapp analysis
+lhci --> dev : results from webapp analysis
 dev -> app : test code changes
 
 @enduml
