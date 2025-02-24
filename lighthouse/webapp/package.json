@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lhci:audit": "lhci autorun",
+    "lhci:audit:prod": "lhci autorun",
+    "lhci:audit:dev" : "lhci autorun --config lighthouserc-dev.js",
     "lhci:wizard": "lhci wizard"
   },
   "dependencies": {
