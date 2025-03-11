@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
     ci: {
       collect: {
@@ -41,7 +43,7 @@ module.exports = {
       upload: {
         target: 'lhci',
         serverBaseUrl: 'http://localhost:9001',
-        token: '4cb2e697-bebe-43a9-a1e5-7c9123edc6ec'
+        token: process.env.LHCI_TOKEN
       },
     },
   }
