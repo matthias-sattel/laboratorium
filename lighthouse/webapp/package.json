@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lhci:audit:prod": "lhci autorun",
+    "lhci:audit:docker": "./run_lighthouse_audit_docker.sh",
     "lhci:audit:dev": "lhci autorun --config lighthouserc-dev.js",
     "lhci:wizard": "lhci wizard"
   },
