@@ -12,7 +12,7 @@ This project is used as a playground and not as a reference :-)
 
 (A) Interation into development with local lhci
 (B) Integration into local deployment with local lhci
-(C) Integration into github pipelin
+(C) Integration into github pipeline
 
 ## (A) Integration into development with local lhci
 
