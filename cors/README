@@ -1,0 +1,33 @@
+# Cross-Origin Resource Sharing - CORS
+
+## What is CORS ?
+
+CORS is a security mechanism to control the access to Resources from different origins. 
+
+### What is an origin in context of CORS?
+
+An origin means some host that tries to access some resource using a specific protocol and port.
+For example https://www.example.com:8080 could be an origin.
+
+### What does the term Resource mean in context of CORS?
+
+A resource can be any asset that can be accessed via a URL, including:
+- HTML documents
+- Images
+- JavaScript files
+- CSS Stylesheets
+- API Endpoints exposed by a web service
+- Audio Data or other binary data that can be accessed by a web browser
+
+## What is the Same-Origin Policy?
+
+The same-origin policy is a fundamental security mechanism, that restricts scripts from one origin to access any resources from a different origin.
+
+## Why is it important to know about CORS ?
+
+There are use cases where a script needs to access resources from a different origin. This is by default restricted by the same-origin policy.
+For example it can be useful for a developer that works on a webapp on his local machine to have his webapp access API endpoints that are explosed by web services that are running on different origins. The same-origin policy forbids this access. Here comes CORS into play, as it allows servers to specify which origins are permitted to access their resources, thus it allows to open the assets to be accessed by other origins in a controlled manner.
+
+## What are Best Practices when dealing with CORS ?
+
+CORS can be very helpful, but also very dangerous. You should always follow the 
