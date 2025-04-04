@@ -1,0 +1,35 @@
+services:
+  api:
+    image: nginx:alpine
+    volumes:
+      - ./api/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./api/employee:/usr/share/nginx/html/employee
+      - ./api/salary:/usr/share/nginx/html/salary
+    ports:
+      - "8081:80"
+    networks:
+      - cors-network
+
+  website:
+    build:
+      context: ./website
+    ports:
+      - "8080:80"
+    networks:
+      - cors-network
+    depends_on:
+      - api
+
+  attacker:
+    build:
+      context: ./website
+    ports:
+      - "8082:80"
+    networks:
+      - cors-network
+    depends_on:
+      - api
+
+networks:
+  cors-network:
+    driver: bridge
