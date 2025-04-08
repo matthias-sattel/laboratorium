@@ -37,6 +37,17 @@ services:
       - employee
       - salary 
 
+  attacker:
+    build:
+      context: ./website
+    ports:
+      - "8090:80"
+    networks:
+      - cors-network
+    depends_on:
+      - employee
+      - salary
+
 networks:
   cors-network:
     driver: bridge
