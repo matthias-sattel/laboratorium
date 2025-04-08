@@ -1,0 +1,21 @@
+{
+    "employee": [
+      {
+        "id": 1,
+        "name": "Employee 1",
+        "description": "This is the first employee"
+      },
+      {
+        "id": 2,
+        "name": "Employee 2",
+        "description": "This is the second employee"
+      },
+      {
+        "id": 3,
+        "name": "Employee 3",
+        "description": "This is the third employee"
+      }
+    ],
+    "timestamp": "2025-04-02T12:00:00Z",
+    "status": "success"
+  }

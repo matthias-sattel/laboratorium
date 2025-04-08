@@ -1,0 +1,21 @@
+{
+    "salary": [
+      {
+        "id": 1,
+        "employee": "Employee 1",
+        "net": 1000
+      },
+      {
+        "id": 2,
+        "employee": "Employee 2",
+        "net": 2000
+      },
+      {
+        "id": 3,
+        "employee": "Employee 3",
+        "net": 3000
+      }
+    ],
+    "timestamp": "2025-04-02T12:00:00Z",
+    "status": "success"
+  }
