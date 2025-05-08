@@ -1,0 +1,1 @@
+The purpose of this project is to experiment with the security of a 'standard' webservice.
