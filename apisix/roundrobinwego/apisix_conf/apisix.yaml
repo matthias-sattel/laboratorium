@@ -1,3 +1,13 @@
+global_rules:
+  - id: 1
+    plugins:
+      response-rewrite:
+        headers:
+          set:
+            Content-Security-Policy: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' http://localhost; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+            X-Content-Type-Options: "nosniff"
+            X-Frame-Options: "DENY"
+            Strict-Transport-Security: "max-age=31536000; includeSubDomains"
 routes:
   -
     id: example-round-robin
