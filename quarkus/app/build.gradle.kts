@@ -6,11 +6,9 @@
  */
 
 plugins {
-    // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
-    alias(libs.plugins.kotlin.jvm)
-
-    // Apply the application plugin to add support for building a CLI application in Java.
-    application
+    kotlin("jvm") version "2.3.0"    
+    id("io.quarkus") version "3.31.3" // Use the latest Quarkus version
+    id("org.jetbrains.kotlin.plugin.allopen") version "2.3.0"
 }
 
 repositories {
@@ -19,31 +17,28 @@ repositories {
 }
 
 dependencies {
-    // Use the Kotlin Test integration.
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    implementation(enforcedPlatform("io.quarkus.platform:quarkus-bom:3.31.3"))
+    implementation("io.quarkus:quarkus-kotlin")
+    implementation("io.quarkus:quarkus-rest")  // Changed from resteasy-reactive
+    implementation("io.quarkus:quarkus-rest-jackson")  // Changed from resteasy-reactive-jackson
+    implementation("io.quarkus:quarkus-arc")
 
-    // Use the JUnit 5 integration.
-    testImplementation(libs.junit.jupiter.engine)
-
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
-    // This dependency is used by the application.
-    implementation(libs.guava)
+    testImplementation("io.quarkus:quarkus-junit5")
+    testImplementation("io.rest-assured:rest-assured")
 }
 
-// Apply a specific Java toolchain to ease working on different environments.
+allOpen {
+    annotation("jakarta.ws.rs.Path")
+    annotation("jakarta.enterprise.context.ApplicationScoped")
+    annotation("jakarta.persistence.Entity")
+}
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
-application {
-    // Define the main class for the application.
-    mainClass = "org.example.AppKt"
-}
-
 tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
